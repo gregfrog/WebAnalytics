@@ -1,0 +1,16 @@
+Package: WebAnalytics
+Type: Package
+Title: Web Server Log Analysis  
+Version: 0.9.3
+Date: 2022-03-12
+Authors@R:person(given="Greg", 
+                family="Hunt", 
+                email = "greg@firmansyah.com", 
+                role = c("aut", "cre", "cph"))
+Author: Greg Hunt [aut, cre, cph]
+Maintainer:  Greg Hunt <greg@firmansyah.com>
+Description: Provides Apache and IIS log analytics for transaction performance, client populations and workload definitions.
+License:  GPL-3
+Depends: R (>= 4.0), ggplot2 (>= 3.3), xtable (>= 1.7-3), scales, utils
+Imports: brew, fs, readr, reshape2, digest
+Suggests: whoami, testthat (>= 3.1)
