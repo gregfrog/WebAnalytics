@@ -1,5 +1,5 @@
 # WebAnalytics
-WebAnalytics - web log performance, scalability and workload analysis
+WebAnalytics - web log performance, scalability and workload analysis - [https://CRAN.R-project.org/package=WebAnalytics](https://CRAN.R-project.org/package=WebAnalytics)
 
 The WebAnalytics package is a simple, low-impact way of getting detailed insights into the performance of a web application and of identifying opportunities for remediation. It generates detailed analytical reports on application response time from web server logs.
 
