@@ -1,5 +1,9 @@
 # *News*
 
+# WebAnalytics 0.9.3 (2022)
+
+New: Added TinyTex support to remove need for separate latex/xelatex installation.  
+
 # WebAnalytics 0.9.2 (2022-03-09)
 
 New: Added User Agent frequency reporting

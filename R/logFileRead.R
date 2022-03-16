@@ -96,7 +96,8 @@ logFileRead <-function(fileName, columnList=c("MSTimestamp", "clientip", "url", 
 										                       col_names = FALSE,
 										                       col_types = wkTypeList,
 										                       na = c("-"),
-										                       comment = "#")),
+										                       comment = "#",
+										                       progress=FALSE)),
 										                                          error=function(e)
 										{
 											message("")				

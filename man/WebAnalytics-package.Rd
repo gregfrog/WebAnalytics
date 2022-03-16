@@ -115,10 +115,16 @@ A function \code{\link{workingDirectoryPopulate}} is provided to populate a work
 \item \code{WebAnalytics.cls} - the report LaTeX class
 }
 
-The supplied
-configuration file \code{\link{sample.config}} read by the report script provides enough flexibility for most purposes.  Switches are provided to turn on or off different sections of the report.  Edit the config file, \code{\link{sample.config}} to update the list of column names and data types (documented in \code{\link{logFileRead}} or use the IIS log utility function \code{\link{logFileFieldsGetIIS}}.  The directory structure that it assumes is that there is a data directory identified in \code{config.current.dataDir} with multiple log directories under it (\code{config.current.dirNames}).  This applies to both current data and the baseline log.  The default behaviour of the script is to read the lexically last file name with a \code{.log} extension from each log directory and it checks that the log names are the same in each directory.  This is consistent with a structure in which logs are reguylarly copied into a log directory for processing or where some pre-processing is required, for example where the log is being written with a varying number of fields as a result of sme other configuration by network or admin teams.  Additional functions are provided to select all or some files: \code{\link{logFileNamesGet}}, \code{\link{logFileNamesGetAll}}, \code{\link{logFileNamesGetLast}},  and \code{\link{logFileNamesGetLastMatching}} and these can be substituted in the report template as needed.  
+An R function, \code{\link{workingDirectoryPopulate}} will place copies of all necessary files in a directory, already configured to generate a sample PDF report from test data supplied with the package.
 
-To generate a sample report PDF you need \code{xelatex} installed.  Run the sample script and config file that are created in that directory using the command \code{. ./makerpt.sh sample} or  \code{powershell -f makerpt.ps1 sample} to generate a sample PDF from the test data supplied as part of the package.  
+The supplied
+configuration file \code{\link{sample.config}} read by the report script provides enough flexibility for most purposes.  Switches are provided to turn on or off different sections of the report.  Edit the config file, \code{\link{sample.config}} to update the list of column names and data types (documented in \code{\link{logFileRead}} or use the IIS log utility function \code{\link{logFileFieldsGetIIS}}.  The directory structure that it assumes is that there is a data directory identified in \code{config.current.dataDir} with multiple log directories under it (\code{config.current.dirNames}).  This applies to both current data and the baseline log.  The default behaviour of the script is to read the lexically last file name with a \code{.log} extension from each log directory and it checks that the log names are the same in each directory.  This is consistent with a structure in which logs are regularly copied into a log directory for processing or where some pre-processing is required, for example where the log is being written with a varying number of fields as a result of sme other configuration by network or admin teams.  Additional functions are provided to select all or some files: \code{\link{logFileNamesGet}}, \code{\link{logFileNamesGetAll}}, \code{\link{logFileNamesGetLast}},  and \code{\link{logFileNamesGetLastMatching}} and these can be substituted in the report template as needed.  
+
+There are multiple ways to run \code{xelatex} on the generated template. A bash script and a Powershell script are provided to do that if you have \LaTeX already installed.  Run the sample script and config file that are created in that directory using the command \code{. ./makerpt.sh sample} or  \code{powershell -f makerpt.ps1 sample} to generate a sample PDF from the test data supplied as part of the package.  If you do not have a \LaTeX installation, The R package \CRANpkg{tinytex} can be used to install \LaTeX and a function \code{\link{pdfGenerate}} is provided in this package to do the PDF generation from within R.
+
+The package uses the CRAN package \CRANpkg{brew} to produce the \LaTeX source from a Brew template and comes with its own \LaTeX document class and a blank logo graphic, both of which can be tailored as needed.  
+
+The generated \LaTeX document has been tested with \code{xelatex} and is known not to work with plain LaTeX because of font issues.  
 
 The package requires Apache or IIS log files to contain elapsed times in addition to timestamps, HTTP verbs, HTTP response codes and URLs. In Apache the elapsed time is provided by the \code{\%d} or \code{\%D} format specifier in a log format specification  string.  In IIS the \code{time-taken} field must be added to the log format.  If supplied, the request and response sizes are also used by the report.  For WebSphere applications, adding the JSESSIONID cookie to the log enables server-level session statistics (the server ID is parsed out of the WebSphere JSESSIONID cookie value, if the JSESSIONID cookie is not of the format \code{serverID:sessionID} the server distribution will be represented by a single server. To get session-level information without the cookie being present, it might be possible to use the client IP (depending on the structure of the network), in which case, adding
 
@@ -128,13 +134,10 @@ b$serverid = 1
 
 to the \code{config.fix.data} function, in the sample configuration file, will provide some useful information.  
 
-The \code{config.fix.data} function is used to classify URLS as dynamic (the URL is retained), static or monitoring.  THe script depends on the literals that are used and the function must use those literals to identify Static and monitoring requests.  
-
-The package uses the CRAN package \CRANpkg{brew} to produce \LaTeX source and comes with its own \LaTeX document class which can be tailored as needed.  
-
-The generated \LaTeX document has been tested with \code{xelatex} and is known not to work with plain LaTeX because of font issues.  
+The \code{config.fix.data} function is used to classify URLS as dynamic (the URL is retained), static or monitoring.  The script depends on the literals that are used and the function must use those literals to identify Static and monitoring requests.  
 
 }
+
 \author{
 Maintainer: \email{Greg Hunt <greg@firmansyah.com>}
 }

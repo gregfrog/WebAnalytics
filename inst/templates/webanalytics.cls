@@ -196,7 +196,6 @@
 
 \usepackage{booktabs}
 \usepackage{pdflscape}
-\usepackage{epstopdf}
 \usepackage{float}
 \usepackage{rotating}
 
