@@ -27,7 +27,7 @@ pdfGenerate<-function(configFile, templateFile="sampleRfile.R", workDir = ".")
   oldwkdir = setwd(workDir)
   if(missing(configFile))
   {
-    configFileList = list.files(pattern=".*\\.config",no..=TRUE)
+    configFileList = list.files(pattern=".*\\.config",no..=TRUE,ignore.case = TRUE)
     if(length(configFileList) > 1)
     {
       setwd(oldwkdir)
@@ -54,8 +54,9 @@ pdfGenerate<-function(configFile, templateFile="sampleRfile.R", workDir = ".")
     stop(paste("Template file", templateFile, "not found"))
   }
 
-    dateString = format(Sys.time(), format="%Y%m%d%H%M%S")
-  nameStem = "WebAnalytics"
+  dateString = format(Sys.time(), format="%Y%m%d%H%M%S")
+  
+  nameStem = sub("(.*)+\\.config","\\1",configFile, ignore.case = TRUE)
   fileNamePrefix = paste0(nameStem, dateString)
   texFileName = paste0(fileNamePrefix,".tex")
 

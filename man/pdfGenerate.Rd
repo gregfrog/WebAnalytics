@@ -12,12 +12,12 @@ pdfGenerate(configFile, templateFile="sampleRfile.R", workDir=".")
 }
 \arguments{
   \item{configFile}{
-The name of the config file to use.  If this parameter is omitted, the work directory is searched for a config file.  If there is only one file with the extnsion \code{.config} it is used.  If there is no config file or multiple config files an error is signalled.}
+The name of the config file to use.  If this parameter is omitted, the work directory is searched for a file whose name ends, case insensitively, in \code{.config}.  If there is only one file with the extnsion \code{.config} it is used.  If there is no config file or multiple config files an error is signalled.  The leading part of the config file name, before \code{.config}, is used as the prefix for the gemerated PDF name}
   \item{templateFile}{
-This defaults to sampleRfile.R which is the default name of the template.
+This defaults to \code{sampleRfile.R} which is the default name of the template.
 	}
   \item{workDir}{
-The directory to use for document generation.  This directory must contain the template and any associated support files, such as the \LaTeX document class. \code{\link{workingDirectoryPopulate}} will populate this directory correctly.
+The directory to use for document generation.  This directory must contain the template and any associated support files, such as the \LaTeX document class. \code{\link{workingDirectoryPopulate}} will populate this directory correctly and create a temporary files directory under it.
 }
 }
 \value{
