@@ -152,9 +152,16 @@ wkDir = paste0(tempdir(),"/ey")
 configVariableSet("config.workdir", filesDir)
 # setup the work directory 
 workingDirectoryPopulate(wkDir)
+
+datd = paste0(tempdir(),"/minconfigtemp")
+unlink(datd)
+dir.create(paste0(tempdir(),"/minconfigtemp"))
+logfile = paste0(datd,"/log.log")
+fileConn = gzfile(system.file("extdata", "compressed.log", package = "WebAnalytics"))
+writeLines(readLines(fileConn),con=logfile)
+close(fileConn)
+
 }
-# get the data file path from the package 
-datd = dirname(system.file("extdata", "compressed.log", package = "WebAnalytics"))
 
 # find the *.log files in the directory 
 logFileName = logFileNamesGetLast(dataDirectory=datd, 

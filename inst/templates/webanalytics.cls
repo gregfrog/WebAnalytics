@@ -44,7 +44,7 @@
 \vspace*{10\p@}%
 {\fontsize{48pt}{48pt}\selectfont {\MakeUppercase{\@projectname}\\}}
 \vspace*{10\p@}%
-{\fontsize{48pt}{48pt}\selectfont {\MakeUppercase{\@title}\\}}
+{\fontsize{40pt}{40pt}\selectfont {\MakeUppercase{\@title}\\}}
 \schemelightcolour{}{\Huge \@date}}
 \end{flushleft}
 \@thanks
