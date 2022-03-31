@@ -1,6 +1,6 @@
 # *News*
 
-# WebAnalytics 0.9.3 (2022)
+# WebAnalytics 0.9.4 (2022)
 
 * New: Added TinyTex support to remove need for separate latex/xelatex installation.
 * New: Added progress messages to report template.

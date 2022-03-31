@@ -68,7 +68,7 @@ pdfGenerate<-function(configFile, templateFile="sampleRfile.R", workDir = ".")
   a = brew::brew(file=templateFile, output=texFileName,envir=e)
   if(exists("a")) 
   {
-    if(class(a) == "try-error")
+    if(inherits(a,"try-error"))
     {
       setwd(oldwkdir)
       signalCondition(a)
