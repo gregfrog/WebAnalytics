@@ -1,6 +1,6 @@
-docs
 ^.*\.Rproj$
 ^\.Rproj\.user$
-.*\.pdf
+^[^/\\]*\.pdf
 ^doc$
 ^Meta$
+package

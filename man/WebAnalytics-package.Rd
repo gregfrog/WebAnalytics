@@ -15,7 +15,7 @@ The objective of the package is to extract the maximum value from web server log
 Package: \tab WebAnalytics\cr
 Type: \tab Package\cr
 Version: \tab 0.9\cr
-Date: \tab 2021-11-21\cr
+Date: \tab 2022-04-22\cr
 License: \tab GPL 3\cr
 }
 
@@ -24,6 +24,16 @@ that were not set up with comprehensive monitoring infrastructure, and sometimes
 intervals, destroying the short term information in the logs.  For some systems the diagnostic plots were interesting by themselves.  
 
 It is not a debugging tool, it indicates where problems are and where there are behaviours that are unexpected: the tables and histograms identifying multiple code paths that developers may not be aware of, the diagnostic plots indicating contention, the scatter plots indicating short term variations in response time that are indicative of some kind of problem.  All these enable potential fixes to be worked on, and once those fixes are developed, enabling direct measurement of the impact using the baselining graphs and tables.
+
+A sample PDF report can be generated in the current directory, with work files saved in under the R tempdir using the following code fragment:
+
+\preformatted{
+library(WebAnalytics)
+filesDir = paste0(tempdir(),"/ex")
+configVariableSet("config.workdir", filesDir)
+workingDirectoryPopulate(".")
+pdfGenerate()
+}
 
 The generated report provides the following:
 
@@ -139,7 +149,7 @@ The \code{config.fix.data} function is used to classify URLS as dynamic (the URL
 }
 
 \author{
-Maintainer: \email{Greg Hunt <greg@firmansyah.com>}
+Maintainer: Greg Hunt \email{greg@firmansyah.com}
 }
 \keyword{ 
 package 
