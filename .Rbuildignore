@@ -4,3 +4,11 @@
 ^doc$
 ^Meta$
 package
+Makefile
+^.*doctests.*
+^\.RData$
+^\.git$
+^\.gitignore$
+^\.Rhistory$
+^.*doctests.*
+^\.vscode$

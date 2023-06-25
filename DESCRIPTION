@@ -1,8 +1,8 @@
 Package: WebAnalytics
 Type: Package
 Title: Web Server Log Analysis  
-Version: 0.9.5
-Date: 2022-04-24
+Version: 0.9.8
+Date: 2023-06-25
 Authors@R:person(given="Greg", 
                 family="Hunt", 
                 email = "greg@firmansyah.com", 

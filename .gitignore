@@ -5,3 +5,8 @@
 revdep/*
 /doc/
 /Meta/
+*.tar.gz
+*.pdf
+*.Rcheck/
+.vscode/
+/tests/doctests/
