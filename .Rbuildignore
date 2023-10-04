@@ -3,7 +3,6 @@
 ^[^/\\]*\.pdf
 ^doc$
 ^Meta$
-package
 Makefile
 ^.*doctests.*
 ^\.RData$

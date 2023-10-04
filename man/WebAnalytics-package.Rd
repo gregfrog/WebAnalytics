@@ -14,8 +14,7 @@ The objective of the package is to extract the maximum value from web server log
 \tabular{ll}{
 Package: \tab WebAnalytics\cr
 Type: \tab Package\cr
-Version: \tab 0.9\cr
-Date: \tab 2022-04-22\cr
+Date: \tab 2023-10-04\cr
 License: \tab GPL 3\cr
 }
 
@@ -201,13 +200,6 @@ plotWriteFilenameToLaTexFile(
               columnNames = c("Delta", "Current", "Baseline", "Percentile"))
     , "xxx")
     )
-
-# plot one of the diagnostic graphs
-plotParallelismRateImpactOnResponse(logdf, 
-includeURLOverall="/QWERTYTest/XRMServices/2011/Organization.svc", 
-includeStatus="Success",
-percentileCutoff = 0.95)
-
 
 \dontshow{
 unlink(wkDir,recursive=TRUE)
