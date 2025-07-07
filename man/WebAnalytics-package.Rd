@@ -169,9 +169,8 @@ logfile = paste0(datd,"/log.log")
 fileConn = gzfile(system.file("extdata", "compressed.log", package = "WebAnalytics"))
 writeLines(readLines(fileConn),con=logfile)
 close(fileConn)
-
 }
-
+\dontrun{
 # find the *.log files in the directory 
 logFileName = logFileNamesGetLast(dataDirectory=datd, 
   directoryNames=c(".", "."), 
@@ -200,7 +199,7 @@ plotWriteFilenameToLaTexFile(
               columnNames = c("Delta", "Current", "Baseline", "Percentile"))
     , "xxx")
     )
-
+}
 \dontshow{
 unlink(wkDir,recursive=TRUE)
 unlink(filesDir,recursive=TRUE)

@@ -48,7 +48,7 @@ summaryTxTablePrint <-function (dataFrame, formatFunctions=NULL)
   headingStrings = sub("([^\\]*)[\\]*.*","\\1", headings)
   while(paste(headingStrings,collapse="") != "")
   {
-    headingLine = paste(format(headingStrings),collapse=" & ")
+    headingLine = paste(" ", format(headingStrings),collapse=" & ")
     cat(headingLine, " \\\\\n")    
     headings = sub("[^\\]*[\\]*(.*)", "\\1", headings)
     headingStrings = format(sub("([^\\]*)[\\]*.*","\\1", headings))
@@ -60,7 +60,7 @@ summaryTxTablePrint <-function (dataFrame, formatFunctions=NULL)
     if(any(!is.na(dataFrame[n,]))) 
     {
       if(is.null(formatFunctions))
-        cat(paste(format(dataFrame[n,]),collapse=" & "),"\\\\")
+        cat(paste(format(dataFrame[n,]),collapse=" & "),"\\\\\n")
       else
       {
         formattedColumns = list()
@@ -68,7 +68,7 @@ summaryTxTablePrint <-function (dataFrame, formatFunctions=NULL)
         {
           formattedColumns = append(formattedColumns, formatFunctions[[i]](dataFrame[n,i]))
         }
-        cat(paste(formattedColumns,collapse=" & "),"\\\\")
+        cat(paste(formattedColumns,collapse=" & "),"\\\\\n")
       }
     }
   }
