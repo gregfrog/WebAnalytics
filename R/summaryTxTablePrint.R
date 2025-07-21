@@ -53,7 +53,7 @@ summaryTxTablePrint <-function (dataFrame, formatFunctions=NULL)
     headings = sub("[^\\]*[\\]*(.*)", "\\1", headings)
     headingStrings = format(sub("([^\\]*)[\\]*.*","\\1", headings))
   }
-  cat("\\hline \\endhead  \\hline")
+  cat("\\hline \\endhead  \\hline ")
   
   for(n in 1:nrow(dataFrame)) 
   {
