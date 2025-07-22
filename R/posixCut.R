@@ -16,16 +16,16 @@
 #     You should have received a copy of the GNU General Public License
 #     along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #
-posixctCut <- function(timeVector, cutString)
+posixctCut <- function(timeVector, interval)
 {
 
   stringFormat = "^[[:space:]]*(([[:digit:]]*)[[:space:]]*(week|day|hour|min|sec)[s]?)[[:space:]]*$"
-  count = sub(stringFormat, "\\2", cutString)
-  unit = sub(stringFormat, "\\3", cutString)
+  count = sub(stringFormat, "\\2", interval)
+  unit = sub(stringFormat, "\\3", interval)
 
-  if(count == cutString)
+  if(count == interval)
   {
-    stop("cut specification in posixCut ", cutString, " is invalid")
+    stop("cut specification in posixCut ", interval, " is invalid")
   }
   
   count = as.numeric(count)

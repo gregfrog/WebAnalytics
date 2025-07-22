@@ -22,9 +22,6 @@ posixctCut(timeVector, interval)
   For example: "1 hour", "3 weeks" or "17 seconds".  
 }
 }
-\details{
-%%  ~~ If necessary, more details than the description above ~~
-}
 \value{
 Returns a vector of POSIXct types, cut to the intervals specified.   
 %%  ~Describe the value returned
@@ -33,21 +30,10 @@ Returns a vector of POSIXct types, cut to the intervals specified.
 %%  \item{comp2 }{Description of 'comp2'}
 %% ...
 }
-\references{
-%% ~put references to the literature/web site here ~
-}
 \author{
 Greg Hunt <greg@firmansyah.com>
 }
-\note{
-%%  ~~further notes~~
-}
-
 %% ~Make other sections like Warning with \section{Warning }{....} ~
-
-\seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
-}
 \examples{
 d = as.POSIXct(c("2025-07-16 23:00:00", "2023-07-02 16:34:03", "2025-02-11 13:24:24"))
 posixctCut(d, "17 mins")
