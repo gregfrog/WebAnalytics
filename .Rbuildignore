@@ -11,3 +11,5 @@ Makefile
 ^\.Rhistory$
 ^.*doctests.*
 ^\.vscode$
+archive
+.github
