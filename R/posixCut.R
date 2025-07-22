@@ -18,10 +18,6 @@
 #
 posixctCut <- function(timeVector, cutString)
 {
-  if(!any(class(timeVector) != "POSIXt"))
-  {
-    stop("posixCut requires posixt type as first parameter, object of class ", class(timeVector), " supplied")
-  }
 
   stringFormat = "^[[:space:]]*(([[:digit:]]*)[[:space:]]*(week|day|hour|min|sec)[s]?)[[:space:]]*$"
   count = sub(stringFormat, "\\2", cutString)
