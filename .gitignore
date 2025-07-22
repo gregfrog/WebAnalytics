@@ -10,3 +10,4 @@ revdep/*
 *.Rcheck/
 .vscode/
 /tests/doctests/
+archive/
