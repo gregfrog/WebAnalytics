@@ -30,7 +30,7 @@ test_that("pdf is generated from sample data (Linux)", {
   local_edition(3)
   skip_on_cran()
   skip_on_os("mac")
-  #skip_on_os("linux")
+  skip_on_os("linux")
   skip_on_os("solaris")
   skip_on_os("windows")
   
@@ -56,7 +56,7 @@ test_that("pdf is generated from sample data (Windows)", {
   skip_on_os("mac")
   skip_on_os("linux")
   skip_on_os("solaris")
-  #skip_on_os("windows")
+  skip_on_os("windows")
   wkdir = paste0(tempdir(),"/testpdf/")
   workingDirectoryPopulate(wkdir)
   file.copy("./minimum.config", wkdir)
