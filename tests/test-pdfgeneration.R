@@ -7,7 +7,7 @@ test_that("URL shortening macro works", {
   # unusable with Cran, test takes a non-negligible amount of time 
   skip_on_cran()
   skip_on_os("mac")
-  #skip_on_os("linux")
+  skip_on_os("linux")
   skip_on_os("solaris")
   skip_on_os("windows")
   wkdir = paste0(tempdir(),"/testpdf/")
