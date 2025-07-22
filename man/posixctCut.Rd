@@ -9,16 +9,17 @@ Cut replacementthat Returns POSUIXct type to avoid the lack of round-trip suppor
 in POSIXt types between Cut, as character and as.POSIXXct
 }
 \usage{
-posixctCut(timeVector, cutString)
+posixctCut(timeVector, interval)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{cutString}{
+  \item{timeVector}{
   vector of POSIXt type
 }
-  \item{intervalType}{
-  a character string consisting of zer or one digits (a count), an optional 
-  space, a word identifying the units to be grouped:sec, secs, min, mins, hour, hours, day, days, week, weeks
+  \item{interval}{
+  a character string consisting of zero or one digits (a count), an optional 
+  space, a word identifying the units to be grouped:sec, secs, min, mins, hour, hours, day, days, week, weeks.  
+  For example: "1 hour", "3 weeks" or "17 seconds".  
 }
 }
 \details{
