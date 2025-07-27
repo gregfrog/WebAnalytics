@@ -13,3 +13,4 @@ Makefile
 ^\.vscode$
 archive
 .github
+.lintr

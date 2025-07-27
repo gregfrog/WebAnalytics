@@ -1,5 +1,13 @@
 # *News*
 
+# WebAnalytics 0.9.14 (2025-07-23)
+
+* New: added switch to replace use of data.table with read,table since data,table is (July 2025) unstable with large datasets
+* New: made data.table suggested rather than required
+* New: made tinytex suggsted rather than imported due to its tendency to tread on other, system-level, tex installations
+* New: removed bash dependencies, now specifies /bin/sh as the shell
+* New: improve Rscript detection logic 
+
 # WebAnalytics 0.9.13 (2025-07-22)
 
 * Bug: Fixes for long URL wrapping in LaTex with more random characters in URLs, created a test case to exxercise that (take an hour or so to run)
