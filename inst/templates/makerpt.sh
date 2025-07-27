@@ -33,7 +33,12 @@ quit(save="no",status=0)
 
 End-of-script
 
-Rscript $brewFileName
+if [[ -n "${R_HOME}"  ]]; then 
+	"${R_HOME}/bin/"Rscript $brewFileName
+else
+	Rscript $brewFileName
+fi 
+
 
 rc=$?
 
