@@ -35,7 +35,7 @@ logfile = paste0(datd,"/log.log")
 fileConn = gzfile(system.file("extdata", "compressed.log", package = "WebAnalytics"))
 writeLines(readLines(fileConn,n=100),con=logfile)
 close(fileConn)
-setDTthreads(threads = 1)
+configVariableSet("config.read.function", "core")
 }
 
 fileNameList = logFileNamesGetAll(dataDirectory=datd)

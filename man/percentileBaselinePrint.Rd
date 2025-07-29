@@ -38,7 +38,7 @@ writeLines(readLines(fileConn,n=100),con=logfile)
 close(fileConn)
 # set the files directory name suitable for an R example
 configVariableSet("config.workdir", tempdir())
-setDTthreads(threads=1)
+configVariableSet("config.read.function", "core")
 }
 
 fileNameList = logFileNamesGetAll(dataDirectory=datd)

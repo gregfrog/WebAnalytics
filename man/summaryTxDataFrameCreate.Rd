@@ -41,6 +41,7 @@ writeLines(readLines(fileConn),con=logfile)
 close(fileConn)
 # set the files directory name suitable for an R example
 configVariableSet("config.workdir", tempdir())
+configVariableSet("config.read.function", "core")
 }
 logFileName = logFileNamesGetLast(dataDirectory=datd, 
   directoryNames=c(".", "."), 
