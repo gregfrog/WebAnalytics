@@ -1,5 +1,10 @@
 # *News*
 
+# WebAnalytics 0.9.15 (2025-07-?)
+
+* 14 release delayed by CRAN administrator because it was too close in time to the 13 release
+* 
+
 # WebAnalytics 0.9.14 (2025-07-23)
 
 * New: added switch to replace use of data.table with read,table since data,table is (July 2025) unstable with large datasets
