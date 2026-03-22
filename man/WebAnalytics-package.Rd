@@ -28,8 +28,6 @@ A sample PDF report can be generated in the current directory, with work files s
 
 \preformatted{
 library(WebAnalytics)
-filesDir = paste0(tempdir(),"/ex")
-configVariableSet("config.workdir", filesDir)
 workingDirectoryPopulate(".")
 pdfGenerate()
 }

@@ -463,9 +463,13 @@ Exclude "Other" User Agents  &  <%= configVariableGet("config.useragent.discardO
   library(uaparserjs)
   uadf = ua_parse(as.character(a$useragent))
   if (configVariableGet("config.useragent.discardOther") == TRUE) 
-  uadf = uadf[uadf$ua.family != "Other",]
-    
+    uadf = uadf[uadf$ua.family != "Other",]
+
+  uadf$ua.major[is.na(uadf$ua.major)] = " "
+  uadf$ua.family[is.na(uadf$ua.family)] = " "
+  
   uaFamily = aggregate(uadf$ua.family, by=list(uadf$ua.family),FUN=length)
+  
   totalFamily = sum(uaFamily$x)
   uaFamily$pct = 100 * uaFamily$x/totalFamily
   uaFamily = uaFamily[order(uaFamily$pct, decreasing=TRUE),]
@@ -473,19 +477,20 @@ Exclude "Other" User Agents  &  <%= configVariableGet("config.useragent.discardO
     
   names(uaFamily) = c("Browser Family", "Count", "Percent", "Cumulative Percentage")
     
-  print(xtable(uaFamily[uaFamily$Percent > minPercent & uaFamily$`Cumulative Percentage`< maxPercentile,]), include.rownames=FALSE)
+  print(xtable(uaFamily[uaFamily$Percent > minPercent & uaFamily$`Cumulative Percentage`<= maxPercentile,]), include.rownames=FALSE)
     
 %>
 \section{User Agent Frequency by Browser Family and Version}
 <%
     uaVersion = aggregate(uadf$ua.family, by=list(uadf$ua.family, uadf$ua.major),FUN=length)
+  
     totalVersion = sum(uaVersion$x)
     uaVersion$pct = 100 * uaVersion$x/totalVersion
     uaVersion = uaVersion[order(uaVersion$pct, decreasing=TRUE),]
     uaVersion$cpct = cumsum(uaVersion$pct)
     names(uaVersion) = c("Browser","Version", "Count", "Percent", "Cumulative Percentage")
     
-    print(xtable(uaVersion[uaVersion$Percent > minPercent & uaVersion$`Cumulative Percentage`< maxPercentile,]), include.rownames=FALSE)
+    print(xtable(uaVersion[uaVersion$Percent > minPercent & uaVersion$`Cumulative Percentage`<= maxPercentile,]), include.rownames=FALSE)
   } else {
 %>
 Browser percentage report selected but no useragent data is present.  
