@@ -1,9 +1,14 @@
 # *News*
 
-# WebAnalytics 0.9.15 (2025-07-?)
+# WebAnalytics 0.9.15 (2026-04-02)
+
+* Bug: Fix to sample report script in package documentation - set the default directory in the sample configuration 
+* New: Change default for user agent reporting to include "Other" and report all values.  Replace NA values with blanks. 
+
+# WebAnalytics 0.9.15 (2025-07-29)
 
 * 14 release delayed by CRAN administrator because it was too close in time to the 13 release
-* 
+
 
 # WebAnalytics 0.9.14 (2025-07-23)
 

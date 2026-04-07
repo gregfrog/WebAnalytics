@@ -1,6 +1,6 @@
 #!/bin/sh
 
-if [ -e "$1"]; then
+if [ -e "$1" ]; then
 configfile=$1
 nameStem=`basename $1`
 elif [ -e "$1.config" ]; then
